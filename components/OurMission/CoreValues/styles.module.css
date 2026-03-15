@@ -1,0 +1,383 @@
+.section {
+    background-color: #84C5F4;
+    /* Light sky blue */
+    position: relative;
+    min-height: 1200px;
+    overflow: hidden;
+}
+
+.container {
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.textContent {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    max-width: 40%;
+    z-index: 5;
+    color: white;
+}
+
+.heading {
+    font-size: 6rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+    font-size: 1.85rem;
+    line-height: 1.6;
+    font-weight: 500;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Landscape Background */
+.landscapeWrapper {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: flex-end;
+}
+
+.landscapeImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+    /* Let hovers pass through the transparent part */
+}
+
+/* Floating Letters positioned over the landscape hills */
+.letterWrapper {
+    position: absolute;
+    /* Z-indexes are defined per letter pos */
+    /* REMOVED floating animation from wrapper so it doesn't create stacking context */
+}
+
+/* Stacking Rules: letterWrapper must not create stacking context.
+   We apply animation to children. */
+.letter,
+.indicator,
+.tooltip {
+    animation: floatBounce 4s infinite ease-in-out;
+}
+
+.letter {
+    display: block;
+    position: relative;
+    /* letter goes behind landscape for U, S, T. For I it goes above. We'll set this inside pos classes */
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+@keyframes floatBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.letterWrapper:hover .letter {
+    /* Need !important since animation transform might conflict, but animation runs on Y, so hover can run on Y and scale.
+    Wait, hover transform overrides animation transform completely!
+    Let's put the scale inside a wrapper or just let hover stop the bounce temporarily. 
+    We'll just let hover stop the bounce. */
+    transform: translateY(-10px) scale(1.05);
+    animation-play-state: paused;
+}
+
+.posU {
+    bottom: 25%;
+    left: 5%;
+}
+
+.posU .letter {
+    z-index: 5;
+    animation-delay: 0s;
+}
+
+.posU .indicator {
+    z-index: 25;
+    animation-delay: 0s;
+}
+
+.posU .tooltip {
+    z-index: 100;
+    animation-delay: 0s;
+}
+
+.posS {
+    bottom: 35%;
+    left: 30%;
+}
+
+.posS .letter {
+    z-index: 5;
+    animation-delay: 1s;
+}
+
+.posS .indicator {
+    z-index: 25;
+    animation-delay: 1s;
+}
+
+.posS .tooltip {
+    z-index: 100;
+    animation-delay: 1s;
+}
+
+.posI {
+    bottom: 15%;
+    right: 38%;
+}
+
+.posI .letter {
+    z-index: 15;
+    animation-delay: 2s;
+}
+
+.posI .indicator {
+    z-index: 25;
+    animation-delay: 2s;
+}
+
+.posI .tooltip {
+    z-index: 100;
+    animation-delay: 2s;
+}
+
+.posT {
+    top: 0px;
+    right: 5%;
+}
+
+.posT .letter {
+    z-index: 5;
+    animation-delay: 3s;
+}
+
+.posT .indicator {
+    z-index: 25;
+    animation-delay: 3s;
+}
+
+.posT .tooltip {
+    z-index: 100;
+    animation-delay: 3s;
+}
+
+/* Tooltips / Description Boxes */
+.tooltip {
+    position: absolute;
+    /* Z-index applied via pos classes to beat landscape z-index 10 */
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+    width: 250px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    /* Center relative to the Top indicator */
+    left: 50%;
+    margin-left: -125px;
+    /* Use margin to center instead of transform because of animation override */
+    margin-bottom: -15px;
+    /* Shifted down for hidden state */
+    opacity: 0;
+    visibility: hidden;
+    /* Transition everything that changes on hover */
+    transition: opacity 0.3s ease, visibility 0.3s ease, margin 0.3s ease;
+    pointer-events: none;
+}
+
+.posU .tooltip,
+.posS .tooltip,
+.posT .tooltip {
+    bottom: 35%;
+}
+
+.posI .tooltip {
+    top: 30%;
+}
+
+/* Because animation overrides transform, we use margin for hover movement. */
+.letterWrapper:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    margin-bottom: 0;
+}
+
+.tooltip h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.tooltip p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.pointerDown {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    margin-left: -15px;
+    /* Replace transform X */
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+}
+
+.pointerUp {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    margin-left: -15px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+}
+
+/* Specific Tooltip Styles */
+.tooltipUnity {
+    background-color: #FFA6A6;
+}
+
+.tooltipIntegrity {
+    background-color: #DDAAFA;
+}
+
+.tooltipService {
+    background-color: #FF8A8A;
+}
+
+.tooltipTrust {
+    background-color: #FFE5A3;
+    color: #FFFFFF;
+    bottom: auto;
+    top: calc(100% - 30px);
+    margin-bottom: 0;
+    margin-top: -15px;
+    /* Reverse slide direction */
+    /* Center relative to the Bottom indicator */
+}
+
+.letterWrapper:hover .tooltipTrust {
+    margin-top: 0;
+}
+
+/* Pulsing Indicator */
+.indicator {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    left: 50%;
+    margin-left: -20px;
+    /* Center without transform to survive floatBounce */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.indicatorTop {
+    top: 0px;
+    /* 20px above */
+}
+
+.indicatorBottom {
+    bottom: 0px;
+    /* 20px below */
+}
+
+.indicatorUnity {
+    --pulse-core: #FFA6A6;
+    --pulse-core-dark: #FF7070;
+    --pulse-ring: #FFA6A6;
+}
+
+.indicatorIntegrity {
+    --pulse-core: #D882E5;
+    --pulse-core-dark: #A248B5;
+    --pulse-ring: #D882E5;
+}
+
+.indicatorTrust {
+    --pulse-core: #FFE5A3;
+    --pulse-core-dark: #D4B254;
+    --pulse-ring: #FFE5A3;
+}
+
+.indicatorService {
+    --pulse-core: #FF6B6B;
+    --pulse-core-dark: #CC3D3D;
+    --pulse-ring: #FF8A8A;
+}
+
+.pulseCenter {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--pulse-core) 0%, var(--pulse-core-dark) 100%);
+    box-shadow: 0 0 10px var(--pulse-ring);
+    position: relative;
+    z-index: 2;
+}
+
+.pulseRing {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid var(--pulse-ring);
+    opacity: 0;
+    animation: ripple 2.5s infinite linear;
+}
+
+.pulse1 {
+    animation-delay: 0s;
+}
+
+.pulse2 {
+    animation-delay: 0.6s;
+}
+
+.pulse3 {
+    animation-delay: 1.2s;
+}
+
+.pulse4 {
+    animation-delay: 1.8s;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.8;
+        border-width: 4px;
+    }
+
+    100% {
+        transform: scale(3.5);
+        opacity: 0;
+        border-width: 1px;
+    }
+}

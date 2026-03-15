@@ -1,0 +1,138 @@
+.footer {
+    background-color: #F5F5F5;
+    padding: 80px 0 30px;
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: var(--max-page-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.colTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 20px;
+}
+
+.colText {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.spacer {
+    height: 20px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.link {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    transition: color 0.2s;
+}
+
+.link:hover {
+    color: var(--green);
+}
+
+.subscribeForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.input {
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input:focus {
+    border-color: var(--green);
+}
+
+.subscribeBtn {
+    background-color: var(--green);
+    color: white;
+    margin-top: 10px;
+    width: 150px;
+    height: 35px;
+    border-radius: 24px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.subscribeBtn:hover {
+    background-color: var(--green-dark);
+}
+
+.bottomBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.socials {
+    display: flex;
+    gap: 15px;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f7fafc;
+    transition: background-color 0.2s;
+}
+
+.socialLink:hover {
+    background-color: #e2e8f0;
+}
+
+@media (max-width: 992px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bottomBar {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}

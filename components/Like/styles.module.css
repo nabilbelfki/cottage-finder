@@ -1,0 +1,22 @@
+.unliked {
+    color: white;
+    /* Make the heart outline white by default */
+    opacity: 0.8;
+    transition: all 0.2s ease;
+}
+
+.unliked:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.liked {
+    color: #ef4444;
+    /* Tailwind red-500 equivalent */
+    transition: all 0.2s ease;
+    transform: scale(1.1);
+}
+
+.liked:hover {
+    transform: scale(1.2);
+}

@@ -1,0 +1,147 @@
+.section {
+    background: linear-gradient(to bottom, #F1D247 0%, #8B7929 100%);
+    padding: 100px 0 160px;
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+    color: white;
+}
+
+.backgroundWrapper {
+    position: absolute;
+    top: -15%;
+    left: 0;
+    width: 100%;
+    height: 130%;
+    /* Taller than container to allow scroll without showing edges */
+    z-index: 0;
+    pointer-events: none;
+}
+
+.backgroundImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+    /* Optional: Tone down the opacity if it's too strong, remove if not desired */
+    pointer-events: none;
+    display: block;
+}
+
+.container {
+    max-width: var(--max-page-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.heading {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 120px;
+    letter-spacing: -1px;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Timeline Layout */
+.timelineWrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timelineLine {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: white;
+    transform: translateY(-50%);
+    /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7); */
+    z-index: 1;
+}
+
+.timelineNodes {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.node {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7); */
+    position: relative;
+    cursor: pointer;
+}
+
+.activeNode {
+    /* Slightly glowing or larger active node if needed */
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+/* Popup Card */
+.storyPopup {
+    position: absolute;
+    top: 50%;
+    /* Distance above the node */
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    color: #333;
+    padding: 25px;
+    border-radius: 6px;
+    width: 320px;
+    text-align: left;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    cursor: default;
+}
+
+.storyHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.storyPopup h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #94812C;
+}
+
+.storyPopup h6 {
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 12px;
+    color: #94812C;
+}
+
+.storyPopup p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.popupPointer {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid white;
+}

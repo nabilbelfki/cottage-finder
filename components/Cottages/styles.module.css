@@ -1,0 +1,308 @@
+.cottagesSection {
+    padding-top: 10px;
+    padding-bottom: 80px;
+    background-color: #F5F5F5;
+}
+
+.container {
+    max-width: var(--max-page-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.filterToggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+.filterMenu {
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 60px;
+    padding: 0px 100px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+.filterColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.filterColumn h4,
+.amenitiesGridBox h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.counterControl {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.counterBtn {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+
+.counterBtn:hover {
+    color: var(--text-dark);
+}
+
+.priceControl {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.priceInput {
+    border: 1px solid #e2e8f0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    width: 80px;
+    outline: none;
+    font-family: inherit;
+}
+
+.radioLabel,
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    cursor: pointer;
+    white-space: nowrap;
+    /* Prevent text wrapping */
+}
+
+.radioLabel input,
+.checkboxLabel input {
+    width: 24px;
+    height: 24px;
+    accent-color: var(--text-dark);
+    flex-shrink: 0;
+}
+
+
+
+.amenitiesGridInner {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    /* Fit exactly to content size */
+    row-gap: 15px;
+    column-gap: 30px;
+    justify-content: flex-start;
+}
+
+.applyBtn {
+    background-color: #2e8b3c;
+    color: white;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 8px 0;
+    grid-column: 4;
+    width: 120px;
+    height: 35px;
+    /* Place it in the last column */
+    border: none;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.applyBtn:hover {
+    background-color: #246f30;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+}
+
+.image {
+    object-fit: cover;
+}
+
+.heartBtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    /* background: white; */
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.cardContent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: white;
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.location {
+    font-size: 0.85rem;
+    font-style: italic;
+    font-weight: 200;
+    opacity: 0.9;
+}
+
+.locationBedsAndBaths {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bedsAndBaths {
+    display: flex;
+    align-items: center;
+    border: solid 1px white;
+    border-radius: 5px;
+    padding: 2px;
+    gap: 2px;
+}
+
+.bed,
+.bath {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.bedText,
+.bathText {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.priceContainer {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: max-content;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Soft drop shadow for container */
+    gap: 8px;
+    /* Closer gap for the new design */
+}
+
+.pageBtn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #A3A3A3;
+    /* Lighter gray text for inactive */
+    background-color: #F5F5F5;
+    /* Light gray background */
+    border: 2px solid transparent;
+    /* Prepare for hover border */
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.pageBtn:hover {
+    color: #2e8b3c;
+    border-color: #2e8b3c;
+    /* Blue border on hover */
+    background-color: #87db94;
+    /* Very light blue/gray background */
+}
+
+.pageBtn:focus,
+.pageBtn:active {
+    outline: none;
+    border-color: #3B82F6;
+}
+
+.pageBtn.active {
+    background-color: #2e8b3c;
+    /* Green active background */
+    color: white;
+    border-color: #2e8b3c;
+}
+
+.dots {
+    color: #A3A3A3;
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 0 5px;
+
+}

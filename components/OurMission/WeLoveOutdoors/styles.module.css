@@ -1,0 +1,186 @@
+.section {
+    background: linear-gradient(to bottom, #9DBA4E 0%, #769E33 50%, #527A23 100%);
+    padding: 120px 0;
+    min-height: 1000px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: var(--max-page-width);
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 60px;
+}
+
+.left {
+    flex: 1;
+    max-width: 600px;
+    color: #3D3D3D;
+    /* Dark green/brown text */
+}
+
+.heading {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.description {
+    font-size: 1.58rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-style: italic;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 20px;
+}
+
+.exploreBtn,
+.joinBtn {
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.exploreBtn {
+    background-color: #3D3D3D;
+    /* Darker green */
+    color: #A2D05C;
+    /* Light green text */
+    border: none;
+}
+
+.exploreBtn:hover {
+    background-color: rgb(26, 42, 26);
+}
+
+.joinBtn {
+    background-color: transparent;
+    color: #3D3D3D;
+    border: 2px solid #3D3D3D;
+}
+
+.joinBtn:hover {
+    background-color: rgba(59, 90, 59, 0.1);
+}
+
+.right {
+    padding-top: 100px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+.networkGraphic {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+}
+
+
+
+.avatar {
+    position: absolute;
+    z-index: 10;
+    filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.25));
+}
+
+.avatar img {
+    border-radius: 50%;
+}
+
+/* Avatar Positions */
+.av1 {
+    top: 10px;
+    left: 50px;
+}
+
+.av2 {
+    top: -20px;
+    right: 160px;
+}
+
+.av3 {
+    top: 60px;
+    right: -20px;
+}
+
+.av4 {
+    bottom: 190px;
+    right: -80px;
+}
+
+.av5 {
+    bottom: 30px;
+    right: 30px;
+}
+
+.av6 {
+    bottom: 10px;
+    right: 200px;
+}
+
+.av7 {
+    bottom: 40px;
+    left: 10px;
+}
+
+.av8 {
+    top: 200px;
+    left: -90px;
+}
+
+/* --- SVG Single Linear Neuron Firing Animation --- */
+
+.neuronSvg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 110%;
+    z-index: 1;
+}
+
+.neuronSvg circle {
+    animation: pulseNode 4s infinite ease-in-out;
+}
+
+/* Staggered pulsing delays for circle nodes */
+.neuronSvg g:nth-of-type(4n + 1) circle { animation-delay: 0s; }
+.neuronSvg g:nth-of-type(4n + 2) circle { animation-delay: 1.5s; }
+.neuronSvg g:nth-of-type(4n + 3) circle { animation-delay: 2.5s; }
+.neuronSvg g:nth-of-type(4n + 4) circle { animation-delay: 3.5s; }
+
+@keyframes pulseNode {
+    0%, 100% {
+        opacity: 0.5;
+        filter: none;
+    }
+    50% {
+        opacity: 1;
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+    }
+}

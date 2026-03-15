@@ -1,0 +1,111 @@
+.amenitiesSection {
+    padding: 80px 0;
+    background-color: #F5F5F5;
+}
+
+.container {
+    max-width: var(--max-page-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    margin-bottom: 40px;
+}
+
+.heading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    /* font-style: italic; */
+    /* max-width: 600px; */
+}
+
+.amenitiesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marqueeRow {
+    display: flex;
+    gap: 15px;
+    width: max-content;
+    padding: 5px 0;
+}
+
+.marqueeRow:hover {
+    animation-play-state: paused;
+}
+
+.marqueeLeft {
+    animation: scrollLeft 30s linear infinite;
+}
+
+.marqueeRight {
+    animation: scrollRight 30s linear infinite;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-25%);
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.amenityChip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    padding: 12px 24px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.amenityChip:hover {
+    border-color: var(--green);
+    box-shadow: 0 6px 12px rgba(103, 182, 101, 0.15);
+    transform: translateY(-2px);
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+}
+
+.amenityName {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}

@@ -1,0 +1,166 @@
+.section {
+    background-color: #FAFAFA;
+    /* Layer 1: Solid top block to hide the start of the lines */
+    /* Layer 2: The actual lines */
+    background-image:
+        linear-gradient(#FAFAFA, #FAFAFA),
+        linear-gradient(rgba(170, 203, 230, 0.4) 2px, transparent 2px);
+    background-size: 100% 140px, 100% 40px;
+    background-position: 0 0, 0 100px;
+    background-repeat: no-repeat, repeat;
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.hole1 {
+    position: absolute;
+    top: 140px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(184, 184, 184, 0.7) 0%, rgba(82, 82, 82, 0.7) 100%);
+    z-index: 10;
+}
+
+.hole2 {
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(184, 184, 184, 0.7) 0%, rgba(82, 82, 82, 0.7) 100%);
+    z-index: 10;
+}
+
+/* Red margin lines on the left */
+.redLines {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 80px;
+    width: 6px;
+    border-left: 2px solid rgba(255, 100, 100, 0.5);
+    border-right: 2px solid rgba(255, 100, 100, 0.5);
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: var(--max-page-width);
+    margin: 0 auto;
+    padding: 0 100px;
+    /* Offset for red lines */
+}
+
+/* TOP CONTENT */
+.topContent {
+    text-align: center;
+    position: relative;
+}
+
+.heading {
+    font-size: 5rem;
+    font-weight: 600;
+    color: white;
+    text-shadow:
+        -3px -3px 0 #3d3d3d,
+        3px -3px 0 #3d3d3d,
+        -3px 3px 0 #3d3d3d,
+        3px 3px 0 #3d3d3d,
+        -3px 0px 0 #3d3d3d,
+        3px 0px 0 #3d3d3d,
+        0px -3px 0 #267726,
+        0px 3px 0 #267726,
+        0px 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    text-align: center;
+    z-index: 20;
+}
+
+.description {
+    font-size: 2.4rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: 300;
+    font-style: italic;
+    /* background: white; */
+    padding: 10px 0px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.exploreBtn,
+.joinBtn {
+    height: 60px;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.exploreBtn {
+    background-color: #333;
+    color: white;
+    border: none;
+}
+
+.exploreBtn:hover {
+    background-color: #111;
+}
+
+.joinBtn {
+    background-color: white;
+    color: #333;
+    border: 2px solid #ccc;
+}
+
+.joinBtn:hover {
+    border-color: #333;
+}
+
+/* FLOATING DECORATIONS */
+.deco {
+    position: absolute;
+    z-index: 5;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+}
+
+.paperPlane {
+    top: -40px;
+    left: -120px;
+    transform: rotate(-15deg);
+}
+
+.megaphone {
+    top: -50px;
+    right: -130px;
+}
+
+.envelop {
+    bottom: -20px;
+    left: 50px;
+    transform: rotate(10deg);
+}
+
+.pencil {
+    bottom: 0px;
+    right: 0px;
+}
+
+/* End of file */
