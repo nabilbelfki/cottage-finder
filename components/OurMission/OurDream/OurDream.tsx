@@ -28,7 +28,7 @@ export default function OurDream() {
     const viewportSettings = { once: false, amount: 0.05, margin: "0px 0px -100px 0px" };
 
     return (
-        <section className={styles.section}>
+        <section className={styles.section} id="our-dream">
             <div className={styles.container}>
                 {/* 
                   Wrap all decorations in a single parent motion container.
@@ -43,7 +43,7 @@ export default function OurDream() {
                         hidden: {},
                         visible: {
                             transition: {
-                                staggerChildren: 0, 
+                                staggerChildren: 0,
                                 delayChildren: 1.0 // Wait 1s for iPad to finish
                             }
                         }
@@ -80,7 +80,7 @@ export default function OurDream() {
                 </motion.div>
 
                 {/* Content Headings - Slides Down */}
-                <motion.div 
+                <motion.div
                     className={styles.content}
                     initial={{ opacity: 0, y: -50 }}
                     whileInView={{ opacity: 1, y: 0 }}

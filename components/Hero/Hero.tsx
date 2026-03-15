@@ -8,7 +8,7 @@ import PeopleIcon from '@/public/icons/people.svg'
 export default function Hero() {
     const [guests, setGuests] = useState(4);
     return (
-        <section className={styles.hero}>
+        <section className={styles.hero} id="hero">
             <Header />
             <div className={styles.heroBackground}></div>
             <div className={styles.container}>

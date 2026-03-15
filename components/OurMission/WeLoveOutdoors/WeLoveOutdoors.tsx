@@ -15,9 +15,9 @@ import ConnectionIcon from "@/public/icons/connection.svg";
 
 export default function WeLoveOutdoors() {
     return (
-        <section className={styles.section}>
+        <section className={styles.section} id="we-love-outdoors">
             <div className={styles.container}>
-                <motion.div 
+                <motion.div
                     className={styles.left}
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -34,7 +34,7 @@ export default function WeLoveOutdoors() {
                     </div>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                     className={styles.right}
                     initial={{ opacity: 0, x: 100 }}
                     whileInView={{ opacity: 1, x: 0 }}

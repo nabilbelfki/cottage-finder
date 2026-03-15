@@ -33,7 +33,7 @@ export default function Cottages() {
     };
 
     return (
-        <section className={styles.cottagesSection}>
+        <section className={styles.cottagesSection} id="cottages">
             <div className={styles.container}>
                 <div className={styles.header}>
                     <div className={styles.filterToggle} onClick={() => setIsFilterOpen(!isFilterOpen)}>

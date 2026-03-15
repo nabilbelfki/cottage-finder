@@ -15,7 +15,7 @@ export default function WeLoveNature() {
     }, []);
 
     return (
-        <section className={styles.weLoveNatureSection}>
+        <section className={styles.weLoveNatureSection} id="we-love-nature">
             <div className={styles.backgroundWrapper}>
                 <video
                     ref={videoRef}

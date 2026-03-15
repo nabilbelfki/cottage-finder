@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 
 export default function GetInTouch() {
     return (
-        <section className={styles.getInTouchSection}>
+        <section className={styles.getInTouchSection} id="get-in-touch">
             <div className={styles.container}>
 
                 {/* Decorative Floating Elements */}

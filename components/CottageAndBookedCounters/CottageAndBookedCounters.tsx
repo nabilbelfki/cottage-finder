@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 
 export default function CottageAndBookedCounters() {
     return (
-        <section className={styles.countersSection}>
+        <section className={styles.countersSection} id="cottage-and-booked-counters">
             <div className={styles.container}>
                 <div className={styles.counterBlock} style={{ justifyContent: 'flex-end' }}>
                     <h2 className={styles.text}>We Have Over</h2>

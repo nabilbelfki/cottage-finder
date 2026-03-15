@@ -28,12 +28,12 @@ export default function Footer() {
                     <div className={styles.col}>
                         <h3 className={styles.colTitle}>Explore</h3>
                         <ul className={styles.list}>
-                            <li><Link href="#" className={styles.link}>Search</Link></li>
-                            <li><Link href="#" className={styles.link}>Cottage List</Link></li>
-                            <li><Link href="#" className={styles.link}>Comments</Link></li>
-                            <li><Link href="#" className={styles.link}>What We Lover</Link></li>
-                            <li><Link href="#" className={styles.link}>Total Visits & Cottages</Link></li>
-                            <li><Link href="#" className={styles.link}>Get In Touch</Link></li>
+                            <li><Link href="/#hero" className={styles.link}>Search</Link></li>
+                            <li><Link href="/#cottages" className={styles.link}>Cottage List</Link></li>
+                            <li><Link href="/#people-say-about-us" className={styles.link}>Comments</Link></li>
+                            <li><Link href="/#we-love-nature" className={styles.link}>What We Love</Link></li>
+                            <li><Link href="/#cottage-and-booked-counters" className={styles.link}>Total Visits & Cottages</Link></li>
+                            <li><Link href="/#get-in-touch" className={styles.link}>Get In Touch</Link></li>
                         </ul>
                     </div>
 
@@ -41,10 +41,10 @@ export default function Footer() {
                     <div className={styles.col}>
                         <h3 className={styles.colTitle}>Our Mission</h3>
                         <ul className={styles.list}>
-                            <li><Link href="#" className={styles.link}>Our Purpose</Link></li>
-                            <li><Link href="#" className={styles.link}>Our Vision</Link></li>
-                            <li><Link href="#" className={styles.link}>Core Values</Link></li>
-                            <li><Link href="#" className={styles.link}>Our Story</Link></li>
+                            <li><Link href="/our-mission#we-love-outdoors" className={styles.link}>We Love the Outdoors</Link></li>
+                            <li><Link href="/our-mission#what-youve-shared" className={styles.link}>What Youve Shared</Link></li>
+                            <li><Link href="/our-mission#core-values" className={styles.link}>Core Values</Link></li>
+                            <li><Link href="/our-mission#our-story" className={styles.link}>Our Story</Link></li>
                         </ul>
                     </div>
 

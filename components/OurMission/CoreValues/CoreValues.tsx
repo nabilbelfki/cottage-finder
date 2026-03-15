@@ -27,10 +27,10 @@ export default function CoreValues() {
     };
 
     return (
-        <section className={styles.section}>
+        <section className={styles.section} id="core-values">
             <div className={styles.container}>
                 {/* Text Content */}
-                <motion.div 
+                <motion.div
                     className={styles.textContent}
                     initial={{ opacity: 0, y: -30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +45,7 @@ export default function CoreValues() {
             </div>
 
             {/* 3D Landscape & Letters */}
-            <motion.div 
+            <motion.div
                 className={styles.landscapeWrapper}
                 initial="hidden"
                 whileInView="visible"

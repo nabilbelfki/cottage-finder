@@ -36,8 +36,9 @@ export default function PeopleSayAboutUs() {
     }, []);
 
     return (
-        <section 
-            ref={sectionRef} 
+        <section
+            ref={sectionRef}
+            id="people-say-about-us"
             className={`${styles.testimonialSection} ${isVisible ? styles.animate : ""}`}
         >
             {/* Absolute Decorations */}
@@ -47,12 +48,12 @@ export default function PeopleSayAboutUs() {
                     <div className={`${styles.decoSmiley} ${styles.fadeInIcon}`}><SmileyIcon /></div>
                     <div className={`${styles.decoRuler} ${styles.fadeInIcon}`}><RulerIcon height={700} width={200} /></div>
                     <div className={`${styles.decoPinkScribble} ${styles.fadeInIcon}`}><PinkScribbleIcon /></div>
-                    <Image 
+                    <Image
                         className={styles.slideLeft}
-                        height={750} 
-                        width={470} 
-                        src='/images/comments-screen.png' 
-                        alt="An image of a phone screen with users comments in it." 
+                        height={750}
+                        width={470}
+                        src='/images/comments-screen.png'
+                        alt="An image of a phone screen with users comments in it."
                     />
                 </div>
                 <div className={styles.right}>

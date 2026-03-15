@@ -50,7 +50,7 @@ export default function Amenities() {
     const row2Copies = [...amenitiesRow2, ...amenitiesRow2, ...amenitiesRow2, ...amenitiesRow2];
 
     return (
-        <section className={styles.amenitiesSection}>
+        <section className={styles.amenitiesSection} id="amenities">
             <div className={styles.container}>
                 <div className={styles.header}>
                     <h2 className={styles.heading}>Choose the amenities that you want during your stay.</h2>
