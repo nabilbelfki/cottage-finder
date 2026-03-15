@@ -1,10 +1,21 @@
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 1000; /* Increased Z-index to stay above everything */
+    transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+.isTop {
+    background-color: transparent;
     padding: 20px 0;
-    z-index: 100;
+}
+
+.isScrolled {
+    background-color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .container {
@@ -19,8 +30,27 @@
 .logo {
     display: flex;
     align-items: center;
+    transition: filter 0.3s ease;
+}
+
+/* At top, the logo is white */
+.isTop .logo {
     filter: brightness(0) invert(1);
 }
+
+/* When scrolled, make logo green (we can invert it and then apply a CSS filter for green or just let it be its natural color if natural is green? The reference svg might be green natively. If not we use a filter tool or `color`. Let's assume natural is green or we can apply a filter.) 
+We'll assume the logo is actually green natively, hence why it was inverted to be white originally. */
+.isScrolled .logo {
+    filter: none;
+    /* If the logo isn't naturally green, it will be the default color. We can force it to green using CSS if needed, but let's try none first. Assuming default is dark text or green. */
+}
+
+/* If the logo is black natively, this filter turns black to the #2A8F3F green (approx):
+   invert(47%) sepia(31%) saturate(836%) hue-rotate(88deg) brightness(97%) contrast(92%) */
+.isScrolled .logo {
+    filter: brightness(0) invert(47%) sepia(31%) saturate(836%) hue-rotate(88deg) brightness(97%) contrast(92%);
+}
+
 
 .nav {
     display: flex;
@@ -30,11 +60,18 @@
 }
 
 .nav a {
-    color: white;
     font-weight: 500;
     font-size: 14px;
-    transition: opacity 0.2s;
+    transition: color 0.3s ease, opacity 0.2s;
     letter-spacing: 0.5px;
+}
+
+.isTop .nav a {
+    color: white;
+}
+
+.isScrolled .nav a {
+    color: #278A3A; /* Green from the reference image */
 }
 
 .nav a:hover {
@@ -54,13 +91,25 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    color: var(--yellow);
-    /* Defines the SVG fill color */
-    transition: color 0.2s;
+    transition: color 0.3s ease;
 }
 
-.joinButton:hover {
+/* At top, the button fill is yellow */
+.isTop .joinButton {
+    color: var(--yellow);
+}
+
+.isTop .joinButton:hover {
     color: var(--yellow-hover);
+}
+
+/* When scrolled, the button fill should be green #278A3A */
+.isScrolled .joinButton {
+    color: #278A3A;
+}
+
+.isScrolled .joinButton:hover {
+    color: #1e6d2d;
 }
 
 .joinSvg {

@@ -1,10 +1,43 @@
+"use client";
+
+import { useState } from "react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import LogoIcon from "@/public/icons/logo.svg";
 import styles from "./styles.module.css";
 
 export default function Header() {
+    const { scrollY } = useScroll();
+    const [hidden, setHidden] = useState(false);
+    const [isTop, setIsTop] = useState(true);
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        const previous = scrollY.getPrevious() || 0;
+        if (latest <= 50) {
+            setIsTop(true);
+            setHidden(false);
+        } else {
+            if (latest > previous && latest > 150) {
+                // Scrolling down past threshold => hide it
+                setHidden(true);
+            } else if (latest < previous) {
+                // Scrolling up => reveal as white/green theme
+                setIsTop(false);
+                setHidden(false);
+            }
+        }
+    });
+
     return (
-        <header className={styles.header}>
+        <motion.header 
+            className={`${styles.header} ${isTop ? styles.isTop : styles.isScrolled}`}
+            variants={{
+                visible: { y: 0 },
+                hidden: { y: "-100%" },
+            }}
+            animate={hidden ? "hidden" : "visible"}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+        >
             <div className={styles.container}>
                 <Link href="/">
                     <div className={styles.logo}>
@@ -30,6 +63,6 @@ export default function Header() {
                     </div>
                 </nav>
             </div>
-        </header>
+        </motion.header>
     );
 }
