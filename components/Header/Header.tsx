@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import LogoIcon from "@/public/icons/logo.svg";
 import styles from "./styles.module.css";
 
 export default function Header() {
     const { scrollY } = useScroll();
+    const pathname = usePathname();
     const [hidden, setHidden] = useState(false);
     const [isTop, setIsTop] = useState(true);
 
@@ -28,9 +30,11 @@ export default function Header() {
         }
     });
 
+    const isWhiteHeaderPage = pathname === "/cottages" || pathname === "/get-in-touch";
+
     return (
-        <motion.header 
-            className={`${styles.header} ${isTop ? styles.isTop : styles.isScrolled}`}
+        <motion.header
+            className={`${styles.header} ${(isTop && !isWhiteHeaderPage) ? styles.isTop : styles.isScrolled}`}
             variants={{
                 visible: { y: 0 },
                 hidden: { y: "-100%" },
@@ -46,10 +50,10 @@ export default function Header() {
                 </Link>
                 <nav className={styles.nav}>
                     <Link href="/">Explore</Link>
-                    <Link href="#">Cottages</Link>
+                    <Link href="/cottages">Cottages</Link>
                     <Link href="/our-mission">Our Mission</Link>
                     <div className={styles.actions}>
-                        <button className={styles.joinButton} aria-label="Join Us" title="Join Us">
+                        <Link href="/get-in-touch" className={styles.joinButton} aria-label="Join Us" title="Join Us">
                             <svg className={styles.joinSvg} viewBox="0 0 104 40" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <mask id="knockout-text">
@@ -59,7 +63,7 @@ export default function Header() {
                                 </defs>
                                 <rect width="104" height="40" rx="20" fill="currentColor" mask="url(#knockout-text)" />
                             </svg>
-                        </button>
+                        </Link>
                     </div>
                 </nav>
             </div>

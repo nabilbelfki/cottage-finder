@@ -1,0 +1,229 @@
+.carouselSection {
+    background-color: #ffffff;
+    padding: 80px 20px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.subHeading {
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: #6d6969;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    /* Base height for the carousel area */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.cardWrapper {
+    position: absolute;
+    width: 650px;
+    /* Hero card width */
+    height: 480px;
+    left: 50%;
+    margin-left: -325px;
+    /* Half of width to perfectly center */
+    border-radius: 16px;
+    will-change: transform, opacity;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.imageContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+}
+
+.cottageImage {
+    object-fit: cover;
+}
+
+.cardOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    /* Cover bottom third */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 50%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.overlayHidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.overlayActive {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.overlayContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.detailsLeft {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+.textDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.title {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.locationRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.location {
+    color: #d1d5db;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.badges {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+}
+
+.badgeRating {
+    background-color: transparent;
+    border: 1px solid #EAB308;
+    color: #EAB308;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 700;
+}
+
+.priceWrap {
+    display: flex;
+    align-items: center;
+}
+
+.priceText {
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+/* Responsiveness for carousel */
+@media (max-width: 1024px) {
+    .cardWrapper {
+        width: 500px;
+        margin-left: -250px;
+        height: 380px;
+    }
+
+    .carouselContainer {
+        height: 400px;
+    }
+}
+
+@media (max-width: 640px) {
+    .cardWrapper {
+        width: 340px;
+        margin-left: -170px;
+        height: 260px;
+    }
+
+    .carouselContainer {
+        height: 280px;
+    }
+
+    .cardOverlay {
+        padding: 12px;
+    }
+
+    .title {
+        font-size: 1.1rem;
+    }
+
+    .priceText {
+        font-size: 1.5rem;
+    }
+
+    .avatar {
+        display: none;
+        /* Hide avatar on very small screens to save space */
+    }
+}

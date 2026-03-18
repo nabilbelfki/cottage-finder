@@ -95,20 +95,20 @@ We'll assume the logo is actually green natively, hence why it was inverted to b
 }
 
 /* At top, the button fill is yellow */
-.isTop .joinButton {
+.isTop .nav a.joinButton {
     color: var(--yellow);
 }
 
-.isTop .joinButton:hover {
+.isTop .nav a.joinButton:hover {
     color: var(--yellow-hover);
 }
 
 /* When scrolled, the button fill should be green #278A3A */
-.isScrolled .joinButton {
+.isScrolled .nav a.joinButton {
     color: #278A3A;
 }
 
-.isScrolled .joinButton:hover {
+.isScrolled .nav a.joinButton:hover {
     color: #1e6d2d;
 }
 

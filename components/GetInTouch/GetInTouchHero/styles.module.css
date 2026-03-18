@@ -1,0 +1,236 @@
+.heroSection {
+    padding: 120px 0 100px 0;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    gap: 60px;
+}
+
+/* --- Left Graphics (Avatars in Circles) --- */
+.leftGraphics {
+    flex: 1;
+    min-width: 400px;
+    position: relative;
+    height: 480px;
+}
+
+.blueCircleGroup {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    z-index: 2;
+}
+
+.blueCircle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 8px solid #3b82f6; /* Blue border */
+    background-color: #f1f5f9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Avatar sits on bottom edge */
+    position: relative;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+}
+
+.envelopeIconBubble {
+    position: absolute;
+    top: 10px;
+    left: -15px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.greenCircleGroup {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    z-index: 3;
+}
+
+.greenCircle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 12px solid #22c55e; /* Green border */
+    background-color: #f0fdf4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(34, 197, 94, 0.25);
+}
+
+.phoneIconBubble {
+    position: absolute;
+    top: 30px;
+    right: -20px;
+    width: 56px;
+    height: 56px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.pinkCircleGroup {
+    position: absolute;
+    bottom: 30px;
+    left: 80px;
+    z-index: 1;
+}
+
+.pinkCircle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 8px solid #ec4899; /* Pink border */
+    background-color: #fdf2f8;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(236, 72, 153, 0.2);
+}
+
+.markerIconBubble {
+    position: absolute;
+    bottom: 5px;
+    right: -10px;
+    width: 36px;
+    height: 36px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.avatarImage {
+    object-fit: contain;
+    position: relative;
+    bottom: -5px; /* Slight overlap on the bottom border */
+}
+
+/* --- Right Content (Text & Buttons) --- */
+.rightContent {
+    flex: 1;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #3b82f6; /* Blue text */
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.description {
+    font-size: 1.25rem;
+    color: #666;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 20px;
+}
+
+.primaryBtn {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 36px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.primaryBtn:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.secondaryBtn {
+    background-color: white;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+    border-radius: 8px;
+    padding: 14px 34px; /* Account for border */
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.secondaryBtn:hover {
+    background-color: #f0f9ff;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .leftGraphics {
+        height: 400px;
+        transform: scale(0.8) translateX(-10%);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .leftGraphics {
+        transform: scale(0.7);
+        margin-bottom: -50px;
+    }
+    
+    .description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .buttonGroup {
+        justify-content: center;
+    }
+}

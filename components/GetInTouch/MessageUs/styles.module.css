@@ -1,0 +1,157 @@
+.messageSection {
+    padding: 100px 0;
+    min-height: 60vh;
+    background: linear-gradient(135deg, #448043, #5ca059, #8fd18d);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 60px;
+}
+
+/* --- Left Content (Text) --- */
+.leftContent {
+    flex: 1;
+    min-width: 400px;
+}
+
+.title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #f0fdf4; /* Very light green hint */
+}
+
+.description {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #e2e8f0;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.faqBtn {
+    background-color: #fbbf24; /* yellow */
+    color: #b45309; /* dark orange/brown */
+    border: none;
+    border-radius: 8px;
+    padding: 16px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.faqBtn:hover {
+    background-color: #fcd34d;
+    transform: translateY(-2px);
+}
+
+/* --- Right Content (Form Card) --- */
+.rightContent {
+    flex: 1;
+    min-width: 400px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.formCard {
+    background-color: #e2e8f0; /* Very light gray/silver */
+    border-radius: 12px;
+    padding: 32px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formRow {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.inputField {
+    flex: 1;
+    padding: 16px 20px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.inputField::placeholder, .textareaField::placeholder {
+    color: #94a3b8;
+    font-style: italic;
+}
+
+.textareaField {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: white;
+    resize: none;
+    height: 200px;
+}
+
+.submitRow {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sendBtn {
+    background-color: #86efac; /* Light Green */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.sendBtn:hover {
+    background-color: #4ade80;
+}
+
+@media (max-width: 1024px) {
+    .leftContent {
+        min-width: 100%;
+    }
+    
+    .rightContent {
+        min-width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .formRow {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
