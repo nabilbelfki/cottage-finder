@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./styles.module.css";
 
 const topCottages = [
@@ -70,7 +71,7 @@ export default function TopCottages() {
                     <div className={styles.marqueeTrack}>
                         <div className={styles.marqueeGroup}>
                             {topCottages.map((cottage) => (
-                                <div key={`group1-${cottage.id}`} className={styles.card}>
+                                <Link href="/cottage" key={`group1-${cottage.id}`} className={styles.card}>
                                     <Image
                                         src={`/images/${cottage.image}`}
                                         alt={cottage.title}
@@ -104,12 +105,12 @@ export default function TopCottages() {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                         <div className={styles.marqueeGroup} aria-hidden="true">
                             {topCottages.map((cottage) => (
-                                <div key={`group2-${cottage.id}`} className={styles.card}>
+                                <Link href="/cottage" key={`group2-${cottage.id}`} className={styles.card}>
                                     <Image
                                         src={`/images/${cottage.image}`}
                                         alt={cottage.title}
@@ -143,7 +144,7 @@ export default function TopCottages() {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                     </div>

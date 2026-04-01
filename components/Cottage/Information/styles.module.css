@@ -1,0 +1,135 @@
+.infoSection {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.topRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.leftContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.metaRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.location {
+    font-size: 1rem;
+    color: #666;
+    font-style: italic;
+}
+
+.badges {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.badge, .badgeBlue, .badgeYellow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    border-width: 2px;
+    border-style: solid;
+    background: transparent;
+}
+
+.badge {
+    border-color: #4A4A4A;
+    color: #4A4A4A;
+}
+
+.badgeBlue {
+    border-color: #6a8cff;
+    color: #6a8cff;
+}
+
+.badgeYellow {
+    border-color: #c7d13b;
+    color: #4A4A4A;
+}
+
+.badgeIcon {
+    fill: currentColor;
+    color: currentColor;
+}
+
+.starIcon {
+    fill: #c7d13b;
+    width: 16px;
+    height: 16px;
+}
+
+.rightContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.priceContainer {
+    display: flex;
+    align-items:baseline;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #22911E;
+}
+
+.perNight {
+    font-size: 1rem;
+    color: #666;
+    margin-left: 4px;
+}
+
+.minNights {
+    font-size: 0.75rem;
+    color: #22911E;
+    margin: 0;
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .topRow {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .rightContent {
+        align-items: flex-start;
+    }
+}

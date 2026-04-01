@@ -1,0 +1,12 @@
+.twoColumnsContainer {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.column {
+    flex: 1;
+    min-width: 300px;
+}

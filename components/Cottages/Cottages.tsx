@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./styles.module.css";
 import BedIcon from "@/public/icons/bed.svg";
 import BathtubIcon from "@/public/icons/bathtub.svg";
@@ -95,7 +96,7 @@ export default function Cottages() {
 
                 <div className={styles.grid}>
                     {cottageState.map((cottage) => (
-                        <div key={cottage.id} className={styles.card}>
+                        <Link href="/cottage" key={cottage.id} className={styles.card}>
                             <div className={styles.imageWrapper}>
                                 <Image
                                     src={`/images/cottages/${cottage.image}`}
@@ -103,7 +104,7 @@ export default function Cottages() {
                                     fill
                                     className={styles.image}
                                 />
-                                <div className={styles.heartBtn}>
+                                <div className={styles.heartBtn} onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}>
                                     <Like
                                         liked={!!cottage.liked}
                                         toggle={() => toggleLike(cottage.id)}
@@ -131,7 +132,7 @@ export default function Cottages() {
                                     <span className={styles.price}>${cottage.price}</span>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
 

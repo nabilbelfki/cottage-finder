@@ -30,7 +30,7 @@ export default function Header() {
         }
     });
 
-    const isWhiteHeaderPage = pathname === "/cottages" || pathname === "/get-in-touch";
+    const isWhiteHeaderPage = pathname === "/cottages" || pathname === "/get-in-touch" || pathname === "/cottage";
 
     return (
         <motion.header

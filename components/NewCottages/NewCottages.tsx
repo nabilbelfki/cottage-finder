@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import styles from "./styles.module.css";
 
 // 18 cottages split into 3 pages of 6
@@ -94,7 +95,7 @@ export default function NewCottages() {
                             className={styles.grid}
                         >
                             {paginatedCottages.map((cottage) => (
-                                <div key={cottage.id} className={styles.card}>
+                                <Link href="/cottage" key={cottage.id} className={styles.card}>
                                     <div className={styles.imageWrapper}>
                                         <Image
                                             src={`/images/${cottage.image}`}
@@ -112,7 +113,7 @@ export default function NewCottages() {
                                             <span className={styles.price}>${cottage.price}</span>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </motion.div>
                     </AnimatePresence>

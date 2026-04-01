@@ -1,0 +1,164 @@
+.aboutHostSection {
+    width: 100%;
+    padding: 20px 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+.cardContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    perspective: 1000px;
+}
+
+.flipInner {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transform-style: preserve-3d;
+}
+
+.cardFront {
+    background-color: #55b955;
+    border-radius: 12px;
+    padding: 32px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    backface-visibility: hidden;
+}
+
+.cardBack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #55b955;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.hostInfo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.joinedText {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.avatarWrapper {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.avatar {
+    object-fit: cover;
+}
+
+.hostText {
+    display: flex;
+    flex-direction: column;
+}
+
+.hostName {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.hostRole {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.content {
+    margin-bottom: 24px;
+    flex: 1;
+}
+
+.content p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.actions {
+    display: flex;
+    gap: 16px;
+}
+
+.primaryBtn, .secondaryBtn {
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    flex: 1;
+    max-width: 200px;
+}
+
+.primaryBtn {
+    background-color: #22911e;
+    color: white;
+}
+
+.primaryBtn:hover {
+    background-color: #1a7a16;
+}
+
+.secondaryBtn {
+    background-color: white;
+    color: #55b955;
+}
+
+.secondaryBtn:hover {
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+    .actions {
+        flex-direction: column;
+    }
+    .primaryBtn, .secondaryBtn {
+        max-width: 100%;
+    }
+}
