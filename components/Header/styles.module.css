@@ -116,3 +116,9 @@ We'll assume the logo is actually green natively, hence why it was inverted to b
     width: 104px;
     height: 40px;
 }
+
+@media (max-width: 768px) {
+    .header {
+        display: none !important;
+    }
+}

@@ -149,6 +149,99 @@
 
 @media (max-width: 992px) {
     .floatingElements {
-        display: none;
+        opacity: 0.5;
+    }
+}
+@media (max-width: 768px) {
+    .getInTouchSection {
+        padding: 150px 0 250px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 800px;
+    }
+    .container {
+        width: 100%;
+    }
+    .heading {
+        font-size: 3.2rem;
+        z-index: 100;
+        position: relative;
+    }
+    .description {
+        font-size: 1.25rem;
+        font-style: italic;
+        font-weight: 300;
+        line-height: 1.4;
+        padding: 0 10px;
+        z-index: 100;
+        position: relative;
+    }
+    .contactBtn {
+        font-weight: 400;
+        border-radius: 8px;
+        padding: 12px 40px;
+        width: 200px;
+        z-index: 100;
+        position: relative;
+        font-size: 1.2rem;
+    }
+    .floatingElements {
+        opacity: 0.9;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* Massive Boy Calling (Middle Left, behind text) */
+    .bubble3 { 
+        top: 150px; 
+        left: -15%; 
+        right: auto;
+        transform: scale(1.5); 
+    }
+    
+    /* Girl Reading (Top Right, overlapping 'Touch') */
+    .bubble4 { 
+        top: 20px; 
+        right: -10px; 
+        left: auto;
+        transform: scale(0.7); 
+    }
+
+    /* Huge Empty Bubble behind Girl Reading */
+    .bubble6 { 
+        top: -80px; 
+        right: -20%; 
+        left: auto;
+        transform: scale(3.5); 
+    }
+    
+    /* Boy Typing (Bottom Right) */
+    .bubble1 { 
+        bottom: 80px; 
+        right: 15%; 
+        top: auto;
+        left: auto; 
+        transform: scale(0.85); 
+    }
+
+    /* Tiny Empty Bubble next to Boy Typing */
+    .bubble5 { 
+        bottom: 70px; 
+        right: -5%; 
+        top: auto;
+        left: auto;
+        transform: scale(1.2); 
+    }
+    
+    /* Empty Medium Bubble (Bottom Left) */
+    .bubble2 { 
+        bottom: 120px; 
+        left: 10%; 
+        top: auto;
+        transform: scale(1.1); 
     }
 }

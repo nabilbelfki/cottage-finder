@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Kavoon } from "next/font/google";
+import MobileNav from "@/components/MobileNav/MobileNav";
 import "./globals.css";
 
 const inter = Inter({
@@ -27,6 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${kavoon.variable}`}>
         {children}
+        <MobileNav />
       </body>
     </html>
   );
